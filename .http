@@ -1,0 +1,31 @@
+### Get Notes
+GET http://localhost:5000/api/notes
+Content-Type: application/json
+
+### Get a Note
+GET http://localhost:5000/api/notes/672140ea802b28711815c536
+Content-Type: application/json
+
+### Create a New Note
+POST http://localhost:5000/api/notes
+Content-Type: application/json
+
+{
+  "title": "Endpoint Note",
+  "text": "This is learning",
+  "author": "KCO",
+  "assignedTo": "KCO"
+}
+
+### Update a Note
+PATCH http://localhost:5000/api/notes/672140ea802b28711815c536
+Content-Type: application/json
+
+{
+  "title": "Modified First Note"
+}
+
+### Delete a Note
+DELETE http://localhost:5000/api/notes/672140aa9f1c47ab83217ccd
+Content-Type: application/json
+
