@@ -11,8 +11,8 @@ POST http://localhost:5000/api/notes
 Content-Type: application/json
 
 {
-  "title": "Endpoint Note",
-  "text": "This is learning",
+  "title": "Third Note",
+  "text": "Keep learning at least slowly",
   "author": "KCO",
   "assignedTo": "KCO"
 }
@@ -22,7 +22,7 @@ PATCH http://localhost:5000/api/notes/672140ea802b28711815c536
 Content-Type: application/json
 
 {
-  "title": "Modified First Note"
+  "title": "UpdatedNote"
 }
 
 ### Delete a Note
