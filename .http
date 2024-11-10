@@ -29,3 +29,30 @@ Content-Type: application/json
 DELETE http://localhost:5000/api/notes/672140aa9f1c47ab83217ccd
 Content-Type: application/json
 
+### SignUp
+POST http://localhost:5000/api/users/signup
+Content-Type: application/json
+
+{
+  "username": "KCOB",
+  "email": "chaya.karim.omar@gmail.com",
+  "password": "sandwich"
+}
+
+### login 
+POST http://localhost:5000/api/users/login
+Content-Type: application/json
+
+{
+  "username": "KCO",
+  "password": "sandwich"
+}
+
+### Is logged in?
+GET http://localhost:5000/api/users
+Content-Type: application/json
+
+{
+  "username": "KCO",
+  "password": "sandwich"
+}

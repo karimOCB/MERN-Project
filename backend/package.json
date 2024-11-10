@@ -14,7 +14,9 @@
   "description": "",
   "devDependencies": {
     "@eslint/js": "^9.13.0",
+    "@types/bcrypt": "^5.0.2",
     "@types/express": "^5.0.0",
+    "@types/express-session": "^1.18.0",
     "@types/http-errors": "^2.0.4",
     "@types/morgan": "^1.9.9",
     "eslint": "^9.13.0",
@@ -23,9 +25,12 @@
     "typescript-eslint": "^8.11.0"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-mongo": "^5.1.0",
     "dotenv": "^16.4.5",
     "envalid": "^8.0.0",
     "express": "^4.21.1",
+    "express-session": "^1.18.1",
     "http-errors": "^2.0.0",
     "mongoose": "^8.7.3",
     "morgan": "^1.10.0"
