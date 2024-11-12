@@ -46,7 +46,7 @@ const NotesPageLoggedInView = () => {
     <>
       <Button
         onClick={() => setShowAddNoteDialogue(true)}
-        className={`my-4 ${stylesUtils.blockCenter} ${stylesUtils.flexCenter}`}
+        className={`mb-4 ${stylesUtils.blockCenter} ${stylesUtils.flexCenter}`}
       >
         <FaPlus />
         Add new note
