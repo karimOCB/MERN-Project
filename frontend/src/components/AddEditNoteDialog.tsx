@@ -4,6 +4,7 @@ import { Note } from "../models/note";
 import { useForm } from "react-hook-form";
 import { NoteInput } from "../network/notes_api";
 import * as NotesApi from "../network/notes_api";
+import TextInputField from "./form/TextInputField";
 
 interface AddEditNoteDialogProps {
   noteToEdit?: Note;
@@ -16,7 +17,6 @@ const AddEditNoteDialog = ({
   onDismiss,
   onNoteSaved,
 }: AddEditNoteDialogProps) => {
-  
   const {
     register,
     handleSubmit,
@@ -27,7 +27,7 @@ const AddEditNoteDialog = ({
       text: noteToEdit?.text || "",
       author: noteToEdit?.author || "",
       assignedTo: noteToEdit?.assignedTo || "",
-    }
+    },
   });
 
   const onSubmit = async (input: NoteInput) => {
@@ -47,60 +47,50 @@ const AddEditNoteDialog = ({
   };
 
   return (
-    <Modal show onHide={onDismiss}>
+    <Modal show onHide={onDismiss} style={{ color: "black" }}>
       <Modal.Header closeButton>
         <Modal.Title>{noteToEdit ? "Edit Note" : "Add Note"}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form id="addEditNoteForm" onSubmit={handleSubmit(onSubmit)}>
-          <Form.Group className="mb-3">
-            <Form.Label>Title</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Title"
-              {...register("title", { required: "Required" })}
-              isInvalid={!!errors.text}
-            />
-            <Form.Control.Feedback type="invalid">
-              {errors.title?.message}
-            </Form.Control.Feedback>
-          </Form.Group>
+          <TextInputField
+            name="title"
+            label="Title"
+            type="text"
+            placeholder="Title"
+            register={register}
+            registerOptions={{ required: "Required" }}
+            error={errors.title}
+          />
 
-          <Form.Group className="mb-3">
-            <Form.Label>Text</Form.Label>
-            <Form.Control
-              as="textarea"
-              rows={5}
-              placeholder="Text"
-              {...register("text")}
-            />
-          </Form.Group>
+          <TextInputField
+            name="text"
+            label="Text"
+            as="textarea"
+            placeholder="Text"
+            rows={5}
+            register={register}
+          />
 
-          <Form.Group className="mb-3">
-            <Form.Label>Author</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Author"
-              {...register("author", { required: "Required" })}
-              isInvalid={!!errors.text}
-            />
-            <Form.Control.Feedback type="invalid">
-              {errors.author?.message}
-            </Form.Control.Feedback>
-          </Form.Group>
+          <TextInputField
+            name="author"
+            label="Author"
+            type="text"
+            placeholder="Author"
+            register={register}
+            registerOptions={{ required: "Required" }}
+            error={errors.author}
+          />
 
-          <Form.Group className="mb-3">
-            <Form.Label>Assigned To</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="AssignedTo"
-              {...register("assignedTo", { required: "Required" })}
-              isInvalid={!!errors.text}
-            />
-            <Form.Control.Feedback type="invalid">
-              {errors.assignedTo?.message}
-            </Form.Control.Feedback>
-          </Form.Group>
+          <TextInputField
+            name="assignedTo"
+            label="Assigned To"
+            type="text"
+            placeholder="AssignedTo"
+            register={register}
+            registerOptions={{ required: "Required" }}
+            error={errors.assignedTo}
+          />
         </Form>
       </Modal.Body>
       <Modal.Footer>
