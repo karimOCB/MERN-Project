@@ -15,3 +15,8 @@ export class UnauthorizedError extends HttpError {}
 export class ConflictError extends HttpError {}
 
 // Add more error classes if you need distinction
+
+/**
+ * Status code: 400
+ */
+export class BadRequestError extends HttpError {}
