@@ -1,10 +1,10 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "dist/server.js",
+  "main": "server.js",
   "scripts": {
-    "build": "tsc --watch",
-    "server": "node --watch dist/server.js",
+    "build": "tsc",
+    "start": "node dist/server.js",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +15,7 @@
   "devDependencies": {
     "@eslint/js": "^9.13.0",
     "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/express-session": "^1.18.0",
     "@types/http-errors": "^2.0.4",
@@ -27,6 +28,7 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "connect-mongo": "^5.1.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "envalid": "^8.0.0",
     "express": "^4.21.1",

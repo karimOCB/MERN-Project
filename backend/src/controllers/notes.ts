@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import { assertIsDefined } from '../utils/assertIsDefined';
 
 export const getNotes: RequestHandler = async (req, res, next) => {
+  console.log("Session data:", req.session);
   const authenticatedUserId = req.session.userId;
 
   try {

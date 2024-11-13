@@ -87,6 +87,7 @@ export const login: RequestHandler<
     }
 
     req.session.userId = userMatch._id;
+    console.log("Session created:", req.session); 
 
     res.status(201).json(userMatch);
   } catch (error) {
